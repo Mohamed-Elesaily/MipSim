@@ -1,0 +1,6 @@
+addi $t0,$zero,8
+nop
+sw $t0,0($zero)
+nop
+lw $t1,0($zero)
+halt

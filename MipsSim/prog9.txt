@@ -1,0 +1,12 @@
+fib:addi $t3,$zero,8
+    addi $s4,$zero,1
+    addi $t5,$zero,-1
+loop:nop
+    beq $t3,$zero,end
+    add $s4,$s4,$t5
+    nop
+    sub $t5,$s4,$t5
+    addi $t3,$t3,-1
+    j loop
+end:sw $s4,($gp)
+   halt

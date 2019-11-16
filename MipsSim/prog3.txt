@@ -1,0 +1,12 @@
+ addi $s0,$zero ,5
+ addi $s1,$zero ,5
+ addi $s2,$zero,5
+ bne $s0, $s1, ELSE 
+ nop
+ bne $s0, $s2, ELSE 
+ addi $s0, $s0, 1 
+ j NEXT 
+ ELSE: addi $s1, $s1, -1 
+ nop 
+ NEXT: add $s1, $s0, $s2
+ halt

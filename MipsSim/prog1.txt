@@ -1,0 +1,28 @@
+    addi $t3,$zero,10
+    nop
+    sw $t3,0($gp)
+    addi $t4,$0,20
+    nop
+    add $t4,$t4,$gp
+    nop
+    sw $t3,28($t4)
+    lw     $t0, 0($gp)
+    nop       
+    srl    $t1, $t0, 1
+    nop      
+    sll    $t1, $t1, 2       
+    nop
+    add    $t1, $gp, $t1      
+    nop
+    lw     $t1, 28($t1)      
+    nop
+    addi   $s0, $t1, 1       
+    sll    $t2, $t0, 2 
+    nop       
+    add    $t2, $t2, $gp   
+    nop 
+    sw     $s0, 28($t2)      
+    addi   $s1, $zero, -1  
+    nop 
+    sw     $s1, 32($t2)
+    halt      
