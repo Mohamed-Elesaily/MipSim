@@ -1,0 +1,24 @@
+addi $s0,$zero,-7
+addi $s1,$zero,0
+add $t0,$zero,$s0
+add $t1,$zero,$s1
+addi $t2,$zero,32768
+lui $t2,32768
+nop
+and $t3,$t2,$t0
+nop
+beq $t3,$zero,L1
+L2: slt $t4,$t0,$t1
+nop
+beq $t4,$zero,L3
+addi $t1,$t1,-1
+J L2
+L1: slt $t5,$t1,$t0
+nop
+beq $t5,$zero,L3
+addi $t1,$t1,1
+J L1
+L3 : add $s2,$t0,$t1
+nop
+sw $s2,0($gp)
+halt

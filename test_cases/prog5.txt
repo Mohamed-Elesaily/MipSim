@@ -1,0 +1,28 @@
+     addi  $s1,$zero,2
+     nop 
+     sw    $s1,0($gp)
+     nop 
+     lw    $t0, 0($gp) 
+     nop                     
+     slti  $t1, $t0, 3 
+     nop          
+     beq   $t1,$zero,def
+     nop
+     beq   $t0, $zero, def      
+     addi  $t1,$zero,1
+     nop 
+     beq   $t1,$t0,is1
+     addi  $t1,$zero,2
+     nop
+     beq   $t1,$t0,is2
+is1:nop
+ j     done
+is2: addi  $t0, $zero, 1 
+     nop        
+     sw    $t0, 36($gp)         
+     j     done
+def: addi  $t0, $zero, -1   
+     nop   
+     sw    $t0, 28($gp)        
+done: nop
+halt

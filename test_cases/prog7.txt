@@ -1,0 +1,13 @@
+ addi $s1,$zero,7
+ addi $s2,$zero,5
+ addi $s3,$zero,7
+ nop
+ beq $s1, $s2, IF
+ nop 
+ bne $s1, $s3, ELSE 
+IF: addi $s1, $s1, 1 
+ j NEXT 
+ELSE: addi $s2, $s2, -1 
+ nop
+NEXT: add $s2, $s1, $s3
+halt 

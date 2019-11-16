@@ -1,0 +1,22 @@
+  addi $s0,$zero,5
+  addi $s1,$zero,7
+  sw $s0,0($gp)
+  sw $s1,4($gp)
+  add $a0,$zero,$gp
+  addi $a1,$zero,1
+  jal swap
+  lw $s0,0($gp)
+  lw $s1,4($gp)
+  j exit
+  swap: sll $t1, $a1, 2
+  nop
+  add $t1, $a0, $t1
+  nop
+  lw $t0, 0($t1)
+  lw $t2, -4($t1)
+  nop
+  sw $t2, 0($t1)
+  sw $t0, -4($t1)
+  jr $ra
+  exit:nop
+  halt

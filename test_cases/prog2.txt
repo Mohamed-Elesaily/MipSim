@@ -1,0 +1,17 @@
+    addi $s0,$zero,5
+    addi $s1,$zero,7
+    sw  $s0,0($gp)
+    sw  $s1,4($gp) 
+    lw     $t0, 0($gp)        
+    lw     $t1, 4($gp)
+    nop       
+    slt    $t1, $t0, $t1    
+    nop  
+    beq    $t1, $zero, skip   
+    sll    $t0, $t0, 2   
+    nop     
+    add    $t0, $t0, $gp  
+    nop    
+    sw     $zero, 28($t0)     
+skip:nop
+halt
