@@ -12,6 +12,7 @@ MipSim is assembler for Mips processor pipeline using Flutter desktop for linux.
 * Mahmoud Ashraf
 * Khalid Muhammad
 * Mahmoud Swillam
+* Mahmoud Benyamin
 * Mohamed Hamada
 * Hady Ashraf
 * Mohamed Ramdan
